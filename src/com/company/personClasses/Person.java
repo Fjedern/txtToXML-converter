@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Person {
     private String firstname;
     private String lastname;
-    private Adress adress;
+    private Address adress;
     private Phone phone;
     private ArrayList<FamilyMember> familyMembers = new ArrayList<>();
 
@@ -30,11 +30,11 @@ public class Person {
         this.lastname = lastname;
     }
 
-    public Adress getAdress() {
+    public Address getAdress() {
         return adress;
     }
 
-    public void setAdress(Adress adress) {
+    public void setAdress(Address adress) {
         this.adress = adress;
     }
 

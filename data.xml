@@ -2,11 +2,11 @@
     <person>
         <firstname>Carl Gustaf</firstname>
         <lastname>Bernadotte</lastname>
-        <adress>
+        <address>
             <street>Drottningholms slott</street>
             <city>Stockholm</city>
             <zipcode>10001</zipcode>
-        </adress>
+        </address>
         <phone>
             <mobile>0768-101801</mobile>
             <landline>08-101801</landline>
@@ -32,10 +32,10 @@
     <person>
         <firstname>Barack</firstname>
         <lastname>Obama</lastname>
-        <adress>
+        <address>
             <street>Pennsylvania Avenue</street>
             <city>Washington, D.C</city>
             <zipcode>1600</zipcode>
-        </adress>
+        </address>
     </person>
 </people>

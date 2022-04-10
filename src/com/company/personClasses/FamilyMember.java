@@ -3,7 +3,7 @@ package com.company.personClasses;
 public class FamilyMember {
     private String name;
     private String birth;
-    private Adress adress;
+    private Address adress;
     private Phone phone;
 
     public FamilyMember(String name, String birth) {
@@ -27,11 +27,11 @@ public class FamilyMember {
         this.birth = birth;
     }
 
-    public Adress getAdress() {
+    public Address getAdress() {
         return adress;
     }
 
-    public void setAdress(Adress adress) {
+    public void setAdress(Address adress) {
         this.adress = adress;
     }
 

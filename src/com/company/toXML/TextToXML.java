@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 // SAX classes.
-import com.company.personClasses.Adress;
+import com.company.personClasses.Address;
 import com.company.personClasses.FamilyMember;
 import com.company.personClasses.Person;
 import com.company.personClasses.Phone;
@@ -26,7 +26,7 @@ public class TextToXML {
 
     String openAndCloseTag = "people";
     ArrayList<Person> people = new ArrayList<>();
-    
+
     public void start() {
         try {
             in = new BufferedReader(new FileReader("data.txt"));
@@ -69,12 +69,12 @@ public class TextToXML {
                     case "A":
                         if(insideP && !insideF){
                             lastPerson = people.get(people.size() - 1);
-                            lastPerson.setAdress(new Adress(splitList[1], splitList[2], splitList[3]));
+                            lastPerson.setAdress(new Address(splitList[1], splitList[2], splitList[3]));
                         } else if(insideF && insideP){
                             lastPerson = people.get(people.size() - 1);
                             familyMembers = lastPerson.getFamilyMembers();
                             lastFamilyMember = familyMembers.get(familyMembers.size() - 1);
-                            lastFamilyMember.setAdress(new Adress(splitList[1], splitList[2], splitList[3]));
+                            lastFamilyMember.setAdress(new Address(splitList[1], splitList[2], splitList[3]));
                         }
                         break;
                     default:
@@ -105,13 +105,13 @@ public class TextToXML {
             xmlHelp("lastname", person.getLastname());
 
             if(person.getAdress() != null) {
-                th.startElement(null, null, "adress", atts);
+                th.startElement(null, null, "address", atts);
 
                 xmlHelp("street", person.getAdress().getStreet());
                 xmlHelp("city", person.getAdress().getCity());
                 xmlHelp("zipcode", person.getAdress().getZipcode());
 
-                th.endElement(null, null, "adress");
+                th.endElement(null, null, "address");
             }
 
             if(person.getPhone() != null) {
