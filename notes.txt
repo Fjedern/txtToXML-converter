@@ -1,0 +1,23 @@
+P kan följas av T, A och F
+F kan följas av T och A
+
+P = Person
+T = Phone
+A = Adress
+F = Family
+
+
+P|förnamn|efternamn
+T|mobilnummer|fastnätsnummer
+A|gata|stad|postnummer
+F|namn|födelseår
+
+
+Lista med personer som heter people
+En person har
+ person - förnamn, efternamn,
+ phone - mobilnummer, fastnätsnummer,
+ adress- gata,stad,postnummer
+ Family - namn, födelseår
+ familyadress -
+

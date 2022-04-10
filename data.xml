@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><people>
+    <person>
+        <firstname>Carl Gustaf</firstname>
+        <lastname>Bernadotte</lastname>
+        <adress>
+            <street>Haga Slott</street>
+            <city>Stockholm</city>
+            <zipcode>10002</zipcode>
+        </adress>
+        <phone>
+            <mobile>0768-101802</mobile>
+            <landline>08-101802</landline>
+        </phone>
+        <family>
+            <name>Victoria</name>
+            <born>1977</born>
+        </family>
+        <family>
+            <name>Carl Philip</name>
+            <born>1979</born>
+        </family>
+    </person>
+    <person>
+        <firstname>Barack</firstname>
+        <lastname>Obama</lastname>
+        <adress>
+            <street>Pennsylvania Avenue</street>
+            <city>Washington, D.C</city>
+            <zipcode>1600</zipcode>
+        </adress>
+    </person>
+</people>
