@@ -25,81 +25,8 @@ public class TextToXML {
     AttributesImpl atts;
 
     String openAndCloseTag = "people";
-    ArrayList<Person> people = new ArrayList<Person>();
-
-    public void readLines() {
-        try {
-            in = new BufferedReader(new FileReader("data.txt"));
-            out = new StreamResult("data.xml");
-            initXML();
-
-            Boolean keepGoing = true;
-            Boolean keepFGoing = true;
-            String str ="";
-            String[] splitList;
-            Boolean foundPerson = false;
-            while(keepGoing){
-                if(foundPerson){
-
-                } else {
-                    str = in.readLine();
-                }
-                if(str != null){
-                    splitList = str.split("\\|");
-                    if(splitList[0].equals("P")){
-                        Person tmpPerson = new Person(splitList[1], splitList[2]);
-                        while((str = in.readLine()) != null) {
-                            splitList = str.split("\\|");
-                            if(splitList[0].equals("P")){
-                                foundPerson = true;
-                                break;
-                            }
-                            if (splitList[0].equals("T")) {
-                                tmpPerson.setPhone(new Phone(splitList[1], splitList[2]));
-                            }
-                            if (splitList[0].equals("F")) {
-                                FamilyMember familyMember = new FamilyMember(splitList[1], splitList[2]);
-
-                                while(keepFGoing) {
-                                    str = in.readLine();
-                                    splitList = str.split("\\|");
-                                    if(splitList[0].equals("F") || splitList[0].equals("P")){
-                                        keepFGoing = false;
-                                    }
-
-                                    if(splitList[0].equals("T")){
-                                        familyMember.setPhone(new Phone(splitList[1], splitList[2]));
-                                    }
-
-                                    if(splitList[0].equals("A")){
-                                        familyMember.setAdress(new Adress(splitList[1], splitList[2], splitList[3]));
-                                    }
-                                }
-                                keepFGoing = true;
-                                tmpPerson.addFamilyMember(familyMember);
-                            }
-                            if (splitList[0].equals("A")) {
-                                tmpPerson.setAdress(new Adress(splitList[1], splitList[2], splitList[3]));
-                            }
-                        }
-                        people.add(tmpPerson);
-                    }
-                } else {
-                    keepGoing = false;
-                }
-            }
-            writeToXML();
-            in.close();
-
-            for (Person person : people) {
-                System.out.println(person);
-            }
-            closeXML();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
+    ArrayList<Person> people = new ArrayList<>();
+    
     public void start() {
         try {
             in = new BufferedReader(new FileReader("data.txt"));
