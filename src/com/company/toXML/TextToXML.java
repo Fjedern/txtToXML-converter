@@ -34,6 +34,7 @@ public class TextToXML {
             initXML();
 
             Boolean keepGoing = true;
+            Boolean keepFGoing = true;
             String str ="";
             String[] splitList;
             Boolean foundPerson = false;
@@ -58,6 +59,23 @@ public class TextToXML {
                             }
                             if (splitList[0].equals("F")) {
                                 FamilyMember familyMember = new FamilyMember(splitList[1], splitList[2]);
+
+                                while(keepFGoing) {
+                                    str = in.readLine();
+                                    splitList = str.split("\\|");
+                                    if(splitList[0].equals("F") || splitList[0].equals("P")){
+                                        keepFGoing = false;
+                                    }
+
+                                    if(splitList[0].equals("T")){
+                                        familyMember.setPhone(new Phone(splitList[1], splitList[2]));
+                                    }
+
+                                    if(splitList[0].equals("A")){
+                                        familyMember.setAdress(new Adress(splitList[1], splitList[2], splitList[3]));
+                                    }
+                                }
+                                keepFGoing = true;
                                 tmpPerson.addFamilyMember(familyMember);
                             }
                             if (splitList[0].equals("A")) {
@@ -81,6 +99,75 @@ public class TextToXML {
             e.printStackTrace();
         }
     }
+
+    public void start() {
+        try {
+            in = new BufferedReader(new FileReader("data.txt"));
+            out = new StreamResult("data.xml");
+            initXML();
+
+            boolean insideP = false;
+            boolean insideF = false;
+            String str;
+            String[] splitList;
+            Person lastPerson;
+            FamilyMember lastFamilyMember;
+            ArrayList<FamilyMember> familyMembers;
+            while((str = in.readLine()) != null){
+                splitList = str.split("\\|");
+
+                switch (splitList[0]){
+                    case "P":
+                        insideP = true;
+                        insideF = false;
+                        Person tmpPerson = new Person(splitList[1], splitList[2]);
+                        people.add(tmpPerson);
+                        break;
+                    case "F":
+                        insideF = true;
+                        lastPerson = people.get(people.size() - 1);
+                        lastPerson.addFamilyMember(new FamilyMember(splitList[1], splitList[2]));
+                        break;
+                    case "T":
+                        if(insideP && !insideF){
+                            lastPerson = people.get(people.size() - 1);
+                            lastPerson.setPhone(new Phone(splitList[1], splitList[2]));
+                        }else if(insideF && insideP){
+                            lastPerson = people.get(people.size() - 1);
+                            familyMembers = lastPerson.getFamilyMembers();
+                            lastFamilyMember = familyMembers.get(familyMembers.size() - 1);
+                            lastFamilyMember.setPhone(new Phone(splitList[1], splitList[2]));
+                        }
+                        break;
+                    case "A":
+                        if(insideP && !insideF){
+                            lastPerson = people.get(people.size() - 1);
+                            lastPerson.setAdress(new Adress(splitList[1], splitList[2], splitList[3]));
+                        } else if(insideF && insideP){
+                            lastPerson = people.get(people.size() - 1);
+                            familyMembers = lastPerson.getFamilyMembers();
+                            lastFamilyMember = familyMembers.get(familyMembers.size() - 1);
+                            lastFamilyMember.setAdress(new Adress(splitList[1], splitList[2], splitList[3]));
+                        }
+                        break;
+                    default:
+                        System.out.println("Something is broken");
+                        break;
+                }
+            }
+
+            writeToXML();
+            in.close();
+            for (Person person : people) {
+                System.out.println(person);
+            }
+            closeXML();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     public void writeToXML() throws SAXException {
         atts.clear();
@@ -124,6 +211,15 @@ public class TextToXML {
                         xmlHelp("zipcode", familyMember.getAdress().getZipcode());
 
                         th.endElement(null, null, "adress");
+                    }
+
+                    if(familyMember.getPhone() != null){
+                        th.startElement(null, null, "phone", atts);
+
+                        xmlHelp("mobile", familyMember.getPhone().getPhoneNumber());
+                        xmlHelp("landline", familyMember.getPhone().getLandline());
+
+                        th.endElement(null, null, "phone");
                     }
 
                     th.endElement(null, null, "family");

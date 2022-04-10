@@ -3,21 +3,30 @@
         <firstname>Carl Gustaf</firstname>
         <lastname>Bernadotte</lastname>
         <adress>
-            <street>Haga Slott</street>
+            <street>Drottningholms slott</street>
             <city>Stockholm</city>
-            <zipcode>10002</zipcode>
+            <zipcode>10001</zipcode>
         </adress>
         <phone>
-            <mobile>0768-101802</mobile>
-            <landline>08-101802</landline>
+            <mobile>0768-101801</mobile>
+            <landline>08-101801</landline>
         </phone>
         <family>
             <name>Victoria</name>
             <born>1977</born>
+            <adress>
+                <street>Haga Slott</street>
+                <city>Stockholm</city>
+                <zipcode>10002</zipcode>
+            </adress>
         </family>
         <family>
             <name>Carl Philip</name>
             <born>1979</born>
+            <phone>
+                <mobile>0768-101802</mobile>
+                <landline>08-101802</landline>
+            </phone>
         </family>
     </person>
     <person>
