@@ -33,7 +33,6 @@ public class TextToXML {
             out = new StreamResult("data.xml");
             initXML();
 
-            boolean insideP = false;
             boolean insideF = false;
             String str;
             String[] splitList;
@@ -45,7 +44,6 @@ public class TextToXML {
 
                 switch (splitList[0]){
                     case "P":
-                        insideP = true;
                         insideF = false;
                         Person tmpPerson = new Person(splitList[1], splitList[2]);
                         people.add(tmpPerson);
@@ -56,10 +54,10 @@ public class TextToXML {
                         lastPerson.addFamilyMember(new FamilyMember(splitList[1], splitList[2]));
                         break;
                     case "T":
-                        if(insideP && !insideF){
+                        if(!insideF){
                             lastPerson = people.get(people.size() - 1);
                             lastPerson.setPhone(new Phone(splitList[1], splitList[2]));
-                        }else if(insideF && insideP){
+                        }else {
                             lastPerson = people.get(people.size() - 1);
                             familyMembers = lastPerson.getFamilyMembers();
                             lastFamilyMember = familyMembers.get(familyMembers.size() - 1);
@@ -67,10 +65,10 @@ public class TextToXML {
                         }
                         break;
                     case "A":
-                        if(insideP && !insideF){
+                        if(!insideF){
                             lastPerson = people.get(people.size() - 1);
                             lastPerson.setAdress(new Address(splitList[1], splitList[2], splitList[3]));
-                        } else if(insideF && insideP){
+                        } else {
                             lastPerson = people.get(people.size() - 1);
                             familyMembers = lastPerson.getFamilyMembers();
                             lastFamilyMember = familyMembers.get(familyMembers.size() - 1);
