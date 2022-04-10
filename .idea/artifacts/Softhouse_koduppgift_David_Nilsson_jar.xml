@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Softhouse_koduppgift_David_Nilsson:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Softhouse_koduppgift_David_Nilsson_jar</output-path>
+    <root id="archive" name="Softhouse_koduppgift_David_Nilsson.jar">
+      <element id="module-output" name="Softhouse_koduppgift_David_Nilsson" />
+    </root>
+  </artifact>
+</component>
