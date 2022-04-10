@@ -13,16 +13,8 @@ public class Phone {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     public String getLandline() {
         return landline;
-    }
-
-    public void setLandline(String landline) {
-        this.landline = landline;
     }
 
     @Override

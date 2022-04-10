@@ -1,9 +1,9 @@
 package com.company.personClasses;
 
 public class FamilyMember {
-    private String name;
-    private String birth;
-    private Address adress;
+    private final String name;
+    private final String birth;
+    private Address address;
     private Phone phone;
 
     public FamilyMember(String name, String birth) {
@@ -15,24 +15,16 @@ public class FamilyMember {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getBirth() {
         return birth;
     }
 
-    public void setBirth(String birth) {
-        this.birth = birth;
+    public Address getAddress() {
+        return address;
     }
 
-    public Address getAdress() {
-        return adress;
-    }
-
-    public void setAdress(Address adress) {
-        this.adress = adress;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public Phone getPhone() {
@@ -48,7 +40,7 @@ public class FamilyMember {
         return "FamilyMember{" +
                 "name='" + name + '\'' +
                 ", birth='" + birth + '\'' +
-                ", adress=" + adress +
+                ", adress=" + address +
                 ", phone=" + phone +
                 '}';
     }

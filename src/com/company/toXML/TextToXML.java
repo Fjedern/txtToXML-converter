@@ -67,12 +67,12 @@ public class TextToXML {
                     case "A":
                         if(!insideF){
                             lastPerson = people.get(people.size() - 1);
-                            lastPerson.setAdress(new Address(splitList[1], splitList[2], splitList[3]));
+                            lastPerson.setAddress(new Address(splitList[1], splitList[2], splitList[3]));
                         } else {
                             lastPerson = people.get(people.size() - 1);
                             familyMembers = lastPerson.getFamilyMembers();
                             lastFamilyMember = familyMembers.get(familyMembers.size() - 1);
-                            lastFamilyMember.setAdress(new Address(splitList[1], splitList[2], splitList[3]));
+                            lastFamilyMember.setAddress(new Address(splitList[1], splitList[2], splitList[3]));
                         }
                         break;
                     default:
@@ -92,8 +92,6 @@ public class TextToXML {
         }
     }
 
-
-
     public void writeToXML() throws SAXException {
         atts.clear();
         for(Person person : people){
@@ -102,12 +100,12 @@ public class TextToXML {
             xmlHelp("firstname", person.getFirstname());
             xmlHelp("lastname", person.getLastname());
 
-            if(person.getAdress() != null) {
+            if(person.getAddress() != null) {
                 th.startElement(null, null, "address", atts);
 
-                xmlHelp("street", person.getAdress().getStreet());
-                xmlHelp("city", person.getAdress().getCity());
-                xmlHelp("zipcode", person.getAdress().getZipcode());
+                xmlHelp("street", person.getAddress().getStreet());
+                xmlHelp("city", person.getAddress().getCity());
+                xmlHelp("zipcode", person.getAddress().getZipcode());
 
                 th.endElement(null, null, "address");
             }
@@ -128,12 +126,12 @@ public class TextToXML {
                     xmlHelp("name", familyMember.getName());
                     xmlHelp("born", familyMember.getBirth());
 
-                    if(familyMember.getAdress() != null){
+                    if(familyMember.getAddress() != null){
                         th.startElement(null, null, "adress", atts);
 
-                        xmlHelp("street", familyMember.getAdress().getStreet());
-                        xmlHelp("city", familyMember.getAdress().getCity());
-                        xmlHelp("zipcode", familyMember.getAdress().getZipcode());
+                        xmlHelp("street", familyMember.getAddress().getStreet());
+                        xmlHelp("city", familyMember.getAddress().getCity());
+                        xmlHelp("zipcode", familyMember.getAddress().getZipcode());
 
                         th.endElement(null, null, "adress");
                     }

@@ -3,9 +3,9 @@ package com.company.personClasses;
 import java.util.ArrayList;
 
 public class Person {
-    private String firstname;
-    private String lastname;
-    private Address adress;
+    private final String firstname;
+    private final String lastname;
+    private Address address;
     private Phone phone;
     private ArrayList<FamilyMember> familyMembers = new ArrayList<>();
 
@@ -18,24 +18,16 @@ public class Person {
         return firstname;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
     public String getLastname() {
         return lastname;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public Address getAddress() {
+        return address;
     }
 
-    public Address getAdress() {
-        return adress;
-    }
-
-    public void setAdress(Address adress) {
-        this.adress = adress;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public Phone getPhone() {
@@ -50,10 +42,6 @@ public class Person {
         return familyMembers;
     }
 
-    public void setFamilyMembers(ArrayList<FamilyMember> familyMembers) {
-        this.familyMembers = familyMembers;
-    }
-
     public void addFamilyMember(FamilyMember familyMember){
         familyMembers.add(familyMember);
     }
@@ -63,7 +51,7 @@ public class Person {
         return "Person{" +
                 "firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", adress=" + adress +
+                ", adress=" + address +
                 ", phone=" + phone +
                 ", FamilyMembers=" + familyMembers +
                 '}';
