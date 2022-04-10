@@ -45,7 +45,7 @@ public class FamilyMember {
 
     @Override
     public String toString() {
-        return "Family{" +
+        return "FamilyMember{" +
                 "name='" + name + '\'' +
                 ", birth='" + birth + '\'' +
                 ", adress=" + adress +

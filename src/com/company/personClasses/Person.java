@@ -65,7 +65,7 @@ public class Person {
                 ", lastname='" + lastname + '\'' +
                 ", adress=" + adress +
                 ", phone=" + phone +
-                ", families=" + familyMembers +
+                ", FamilyMembers=" + familyMembers +
                 '}';
     }
 }
