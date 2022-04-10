@@ -1,6 +1,6 @@
 # txtToXML-converter
  
-##Fileformat##<br/>
+## Fileformat<br/>
 P|firstname|lastname<br/>
 T|phonenumber|landline<br/>
 A|street|city|zipcode<br/>
@@ -9,7 +9,7 @@ F|name|birthdate<br/>
 P can be followed by T, A and F<br/>
 F can be followed T och A<br/>
 
-##Example data##<br/>
+## Example data<br/>
 P|Carl Gustaf|Bernadotte<br/>
 T|0768-101801|08-101801<br/>
 A|Drottningholms slott|Stockholm|10001<br/>
