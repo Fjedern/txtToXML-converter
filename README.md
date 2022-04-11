@@ -6,7 +6,7 @@
  <li>Make sure to have java installed</li>
  <li>Navigate to out\artifacts\Softhouse_koduppgift_David_Nilsson_jar on github and download both files</li>
  <li>Place .jar and .txt in same folder</li>
- <li>Do "java -cp Softhouse_koduppgift_David_Nilsson.jar com.company.Main" in terminal</li>
+ <li>Do ```java -cp Softhouse_koduppgift_David_Nilsson.jar com.company.Main``` in terminal</li>
 </ul>
 
 ### Alternative 2
