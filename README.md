@@ -1,4 +1,14 @@
 # txtToXML-converter
+
+## How to run
+<ul>
+ <li>Make sure to have java installed</li>
+ <li>Navigate to txtToXML-converter-main\out\artifacts\Softhouse_koduppgift_David_Nilsson_jar</li>
+ <li>Do "java -cp Softhouse_koduppgift_David_Nilsson.jar com.company.Main" in terminal</li>
+
+
+
+Kör txtToXML-converter-main\out\artifacts\Softhouse_koduppgift_David_Nilsson_jar med "java -cp Softhouse_koduppgift_David_Nilsson.jar com.company.Main" i terminalen eller öppna projektet i en java editor (Eclipse, intellij) och kör Main
  
 ## Fileformat<br/>
 P|firstname|lastname<br/>
