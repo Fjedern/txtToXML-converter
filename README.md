@@ -1,4 +1,14 @@
 # txtToXML-converter
+
+## How to run
+### Alternative 1
+ - Make sure to have java installed
+ - Navigate to out\artifacts\Softhouse_koduppgift_David_Nilsson_jar on github and download both files
+ - Place .jar and .txt in same folder
+ - ```java -cp Softhouse_koduppgift_David_Nilsson.jar com.company.Main``` in terminal
+
+### Alternative 2
+Open project in preferred java editor (Eclipse, intellij) and run Main
  
 ## Fileformat<br/>
 P|firstname|lastname<br/>
