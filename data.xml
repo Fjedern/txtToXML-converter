@@ -9,7 +9,7 @@
         </address>
         <phone>
             <mobile>0768-101801</mobile>
-            <landline>08-101801</landline>
+            <landline>08-101555</landline>
         </phone>
         <family>
             <name>Victoria</name>
@@ -37,5 +37,9 @@
             <city>Washington, D.C</city>
             <zipcode>1600</zipcode>
         </address>
+    </person>
+    <person>
+        <firstname>David</firstname>
+        <lastname>Nilsson</lastname>
     </person>
 </people>

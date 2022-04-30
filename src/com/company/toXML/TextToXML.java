@@ -33,7 +33,7 @@ public class TextToXML {
             out = new StreamResult("data.xml");
             initXML();
 
-            boolean insideF = false;
+            boolean insideF = false; //isFamilyMember
             String str;
             String[] splitList;
             Person lastPerson;
@@ -41,6 +41,7 @@ public class TextToXML {
             ArrayList<FamilyMember> familyMembers;
             while((str = in.readLine()) != null){
                 splitList = str.split("\\|");
+                //lastPerson -> LatestPerson, currentPerson
 
                 switch (splitList[0]){
                     case "P":

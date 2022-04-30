@@ -1,5 +1,6 @@
 P|Carl Gustaf|Bernadotte
 T|0768-101801|08-101801
+T|0768-101801|08-101555
 A|Drottningholms slott|Stockholm|10001
 F|Victoria|1977
 A|Haga Slott|Stockholm|10002
@@ -7,3 +8,5 @@ F|Carl Philip|1979
 T|0768-101802|08-101802
 P|Barack|Obama
 A|Pennsylvania Avenue|Washington, D.C|1600
+
+P|David|Nilsson
